@@ -180,3 +180,4 @@ mkdir -p /home/$REAL_USER/.config/rofi
 cp -r Wallpapers /home/$REAL_USER/Pictures/
 cp -r config /home/$REAL_USER/.config/
 cp UbuntuNerdFont/*.ttf /usr/local/share/fonts
+cp UbuntuMonoNerdFont/*.ttf /usr/local/share/fonts

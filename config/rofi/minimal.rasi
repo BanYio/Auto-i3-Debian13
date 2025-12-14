@@ -8,7 +8,7 @@ configuration {
     columns: 1;
     background-color: #00000000;
     text-color: #EFEFEF;
-    font: "UbuntuMono Nerd Font Bold 14";
+    font: "Ubuntu Nerd Font Bold 14";
 }
 
 window {

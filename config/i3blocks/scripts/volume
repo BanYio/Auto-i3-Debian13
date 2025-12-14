@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SINK="@DEFAULT_SINK@"
+
+VOL="$(pactl get-sink-volume "$SINK" | awk '{print $5}' | head -n1)"
+MUTE="$(pactl get-sink-mute "$SINK" | awk '{print $2}')"
+
+ICON="󰕾"
+[ "$MUTE" = "yes" ] && ICON="󰖁"
+
+# Clicks
+case "${BLOCK_BUTTON:-0}" in
+  1) pactl set-sink-mute "$SINK" toggle ;;        # Click izq: mute
+  4) pactl set-sink-volume "$SINK" +5% ;;         # Scroll up
+  5) pactl set-sink-volume "$SINK" -5% ;;         # Scroll down
+esac
+
+echo "$ICON $VOL"

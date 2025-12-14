@@ -53,3 +53,15 @@ nano config  # edit it with your preferred editor
 | Windows + Esc | Power Menu (Log-out, restart, power-off) |
 | Windows + E | File Explorer (Nautilus) |
 
+
+## Shortcuts for Kitty
+| command | exec |
+| :--- | :--- |
+| Windows + Shift + T | New Tab |
+| Ctrl + Shift + R | Split terminal right (vertical) |
+| Ctrl + Shift + D | Split terminal down (horizontal) |
+| Alt + arrows | Move to different terminal splits |
+| Ctrl + Shift + arrows | Resize selected split |
+| Ctrl + Tab | Move into tabs |
+
+

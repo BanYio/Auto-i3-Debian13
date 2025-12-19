@@ -1,6 +1,6 @@
 # Auto-i3-Debian13
 
-Minimalist setup for Debian13
+Minimalist setup for **Debian13-GNOME**
 
 ## Instalation
 

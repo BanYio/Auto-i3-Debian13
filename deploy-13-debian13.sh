@@ -163,7 +163,7 @@ EOF
 
 # Fuentes
 cd /home/$REAL_USER/Auto-i3-Debian13/
-mkdir Fonts
+sudo -u "$REAL_USER" mkdir Fonts
 cd Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.zip
@@ -180,11 +180,11 @@ chmod +x config/i3/scripts/*.sh
 chmod +x config/i3blocks/scripts/*.sh
 
 # Crear carpetas necesarias en .config
-mkdir -p /home/$REAL_USER/.config/i3
-mkdir -p /home/$REAL_USER/.config/i3blocks
-mkdir -p /home/$REAL_USER/.config/kitty
-mkdir -p /home/$REAL_USER/.config/picom
-mkdir -p /home/$REAL_USER/.config/rofi
+sudo -u "$REAL_USER" mkdir -p /home/$REAL_USER/.config/i3
+sudo -u "$REAL_USER" mkdir -p /home/$REAL_USER/.config/i3blocks
+sudo -u "$REAL_USER" mkdir -p /home/$REAL_USER/.config/kitty
+sudo -u "$REAL_USER" mkdir -p /home/$REAL_USER/.config/picom
+sudo -u "$REAL_USER" mkdir -p /home/$REAL_USER/.config/rofi
 
 # Copia de los dot files y la fuente
 cp -r Wallpapers/* /home/$REAL_USER/Pictures/

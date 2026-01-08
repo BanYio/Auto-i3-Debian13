@@ -39,16 +39,12 @@ check_installed() {
 
 # Instalar aplicaciones
 sudo apt update
-sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting kitty curl git flameshot python3-pip python3-venv pipx docker.io docker-compose locate golang krb5-user tree i3 i3blocks i3lock i3lock-fancy i3status i3-wm picom rofi feh fonts-font-awesome jq dmenu openvpn nmap netdiscover mitm6 seclists flameshot golang xsel xdotool libxfixes-dev bloodyad feroxbuster make gcc -y
+sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting kitty curl git flameshot python3-pip python3-venv pipx docker.io docker-compose locate golang tree i3 i3blocks i3lock i3lock-fancy i3status i3-wm picom rofi feh fonts-font-awesome jq dmenu mitm6 xsel xdotool libxfixes-dev make gcc -y
 
 
 #############
 # PIP TOOLS #
 #############
-pipx ensurepath
-pipx install git+https://github.com/Pennyw0rth/NetExec
-pipx install bloodhound
-python3 -m pipx install impacket
 pip3 install i3-workspace-names-daemon --break-system-packages
 
 
@@ -114,9 +110,9 @@ make install
 sudo make install
 
 # Añadir servicio de clipmenu para el usuario
-systemctl --user daemon-reexec
-systemctl --user daemon-reload
-systemctl --user enable --now clipmenud.service
+sudo -u "$REAL_USER" systemctl --user daemon-reexec
+sudo -u "$REAL_USER" systemctl --user daemon-reload
+sudo -u "$REAL_USER" systemctl --user enable --now clipmenud.service
 echo -e "${GREEN}[+] Creado el servicio de usuario clipmenud${RESET}"
 
 
@@ -165,6 +161,20 @@ EOF
 # i3 ENTORNO COMPLETO #
 #######################
 
+# Fuentes
+cd /home/$REAL_USER/Auto-i3-Debian13/
+mkdir Fonts
+cd Fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.zip
+unzip Ubuntu.zip
+rm -rf *.txt *.md
+unzip UbuntuMono.zip
+rm -rf *.txt *.md
+sudo mkdir -p /usr/local/share/fonts
+cp *.ttf /usr/local/share/fonts
+cd ..
+
 # Permisos de ejecucion a los .sh
 chmod +x config/i3/scripts/*.sh
 chmod +x config/i3blocks/scripts/*.sh
@@ -179,5 +189,3 @@ mkdir -p /home/$REAL_USER/.config/rofi
 # Copia de los dot files y la fuente
 cp -r Wallpapers /home/$REAL_USER/Pictures/
 cp -r config /home/$REAL_USER/.config/
-cp UbuntuNerdFont/*.ttf /usr/local/share/fonts
-cp UbuntuMonoNerdFont/*.ttf /usr/local/share/fonts

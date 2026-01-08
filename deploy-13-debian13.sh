@@ -187,5 +187,5 @@ mkdir -p /home/$REAL_USER/.config/picom
 mkdir -p /home/$REAL_USER/.config/rofi
 
 # Copia de los dot files y la fuente
-cp -r Wallpapers /home/$REAL_USER/Pictures/
-cp -r config /home/$REAL_USER/.config/
+cp -r Wallpapers/* /home/$REAL_USER/Pictures/
+cp -r config/* /home/$REAL_USER/.config/

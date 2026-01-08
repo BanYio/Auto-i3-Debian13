@@ -2,6 +2,12 @@
 
 Minimalist setup for **Debian13-GNOME**
 
+<img width="959" height="461" alt="ORANGE-PI-ZERO-2W-rofi" src="https://github.com/user-attachments/assets/47be7b48-14cb-4dc7-9f41-0648149216ae" />
+
+
+<img width="959" height="461" alt="ORANGE-PI-ZERO-2W-apps-debian" src="https://github.com/user-attachments/assets/19ed167b-3188-4d60-a60e-b6201f7c1617" />
+
+
 ## Instalation
 
 After cloning the repo just run with sudo deploy-13-debian13.sh
@@ -41,6 +47,7 @@ nano config  # edit it with your preferred editor
 | Windows + Shift + Q | close focused window |
 | Windows + Shift + R | Restar I3 manager |
 | Windows + L | Lock session |
+| Windows + Shift + Space | Change to float/complete window |
 
 
 ## Shortcuts for personal tools
